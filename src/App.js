@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 
@@ -9,13 +9,17 @@ import Footer from "./Components/Footer";
 import "./App.css";
 
 const App = () => {
+  const [hide, setHide] = useState(false);
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <Navbar />
+      <Navbar hide={hide} />
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/excercise/:id" element={<ExcerciseDetail />}></Route>
+        <Route path="/" element={<Home setHide={setHide} />}></Route>
+        <Route
+          path="/excercise/:id"
+          element={<ExcerciseDetail setHide={setHide} />}
+        ></Route>
       </Routes>
 
       <Footer />

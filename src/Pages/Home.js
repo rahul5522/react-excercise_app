@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import Banner from "../Components/Banner";
 import Search from "../Components/Search";
@@ -6,10 +6,14 @@ import Excercises from "../Components/Excercises";
 
 export const DataContext = React.createContext();
 
-export const Home = () => {
+export const Home = ({ setHide }) => {
   //Those states are going to be used by multiple pages
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [excercises, setExcercises] = useState([]);
+
+  useEffect(() => {
+    setHide(true);
+  }, []);
 
   return (
     <DataContext.Provider

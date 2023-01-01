@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
 
 import Logo from "../assets/icons/icon3.png";
+import F_Logo from "../assets/images/dumb_logo.png";
 
-const Navbar = () => {
+const Navbar = ({ hide }) => {
   return (
     <Stack
       direction="row"
@@ -29,7 +30,7 @@ const Navbar = () => {
             },
           }}
         >
-          <img src={Logo} className="logo" />
+          <img src={F_Logo} className="logo" />
         </Stack>
       </Link>
       <Stack
@@ -60,9 +61,21 @@ const Navbar = () => {
         >
           Home
         </Link>
-        <a href="#exercises" style={{ textDecoration: "none", color: "white" }}>
-          Excercises
-        </a>
+        {hide ? (
+          <a
+            href="#exercises"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Excercises
+          </a>
+        ) : (
+          <a
+            href="#ex_video"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Excercises
+          </a>
+        )}
       </Stack>
     </Stack>
   );

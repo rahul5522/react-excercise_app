@@ -7,6 +7,7 @@ const ExcerciseVideo = ({ excerciseVideo, name }) => {
 
   return (
     <Box
+      id="ex_video"
       sx={{
         marginTop: { lg: "150px", xs: "40px" },
         m: {

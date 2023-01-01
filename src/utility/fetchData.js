@@ -5,7 +5,7 @@ export const giveData = async (url) => {
     options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "a2da85f153mshaccc1dd70a3901dp1e5e72jsne181faa35b5e",
+        "X-RapidAPI-Key": "8dc621c534msh4a8e5e2c4131cecp1ddf3djsnb1f4f90b273b",
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
       },
     };

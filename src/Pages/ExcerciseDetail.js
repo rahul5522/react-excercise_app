@@ -7,7 +7,7 @@ import SimilarExcercises from "../Components/SimilarExcercises";
 import ExcerciseVideo from "../Components/ExcerciseVideo";
 // import * as yt from "youtube-search-without-api-key";
 
-const ExcerciseDetail = () => {
+const ExcerciseDetail = ({ setHide }) => {
   const [excerciseDetails, setExcerciseDetails] = useState({});
   const [exerciseVideos, setExerciseVideos] = useState([]);
   const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
@@ -15,6 +15,8 @@ const ExcerciseDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    setHide(false);
+
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     const fetchExcercise = async () => {
       const excerciseUrl = "https://exercisedb.p.rapidapi.com";
