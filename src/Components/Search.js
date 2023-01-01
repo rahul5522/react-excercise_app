@@ -36,14 +36,23 @@ const Search = () => {
 
     setSearch("");
     context_data.setExcercises(excercise_list);
+    var scroll_id = document.getElementById("exercises");
+    scroll_id.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <Stack alignItems="center" mt="250px" justifyContent="center" p="20px">
+    <Stack
+      alignItems="center"
+      justifyContent="center"
+      p="20px"
+      sx={{ mt: { xs: "100px", sm: "250px", md: "250px", lg: "250px" } }}
+    >
       <Typography
         fontWeight={700}
-        sx={{ fontSize: { lg: "44px", xs: "30px" } }}
-        mb="49px"
+        sx={{
+          fontSize: { lg: "44px", xs: "25px" },
+          mb: { xs: "49px", sm: "49px", md: "49px", lg: "49px" },
+        }}
         textAlign="center"
         color="white"
       >
@@ -99,8 +108,15 @@ const Search = () => {
         </Button>
       </Box>
 
-      <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
-        <HorizontalBar data={categories} />
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          p: { xs: "0px", sm: "10px", md: "20px", lg: "20px" },
+          mt: { xs: "30px" },
+        }}
+      >
+        <HorizontalBar data={categories} from="search" />
       </Box>
     </Stack>
   );

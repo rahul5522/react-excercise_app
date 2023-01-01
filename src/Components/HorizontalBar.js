@@ -20,7 +20,7 @@ import gym11 from "../assets/images/gym13.jpg";
 import gym1 from "../assets/images/gym12.jpg";
 import ExcerciseCard from "./ExcerciseCard";
 
-const HorizontalBar = ({ data }) => {
+const HorizontalBar = ({ data, from }) => {
   const c = useRef(null);
 
   const leftHandle = () => {
@@ -33,7 +33,7 @@ const HorizontalBar = ({ data }) => {
 
   const BodyPartImage = [
     {
-      text: "",
+      text: "All",
       img: gym2,
     },
     {
@@ -78,22 +78,27 @@ const HorizontalBar = ({ data }) => {
     },
   ];
 
-  for (let i = 0; i < 11; i++) {
-    BodyPartImage[i].text = data[i];
+  if (from === "search") {
+    for (let i = 0; i < 11; i++) {
+      BodyPartImage[i].text = data[i];
+    }
   }
+
   return (
     <Box
       sx={{
         display: "flex",
-        gap: { sm: "0.5rem", xs: "0.5rem", md: "2rem", lg: "2rem" },
+        gap: { sm: "0.5rem", xs: "0.2rem", md: "2rem", lg: "2rem" },
         alignItems: "center",
       }}
     >
       <Button
         sx={{
+          display: { xs: "none", sm: "none", md: "block", lg: "block" },
           color: "Black",
           backgroundColor: "white",
-          height: "50px",
+          height: { xs: "30px", sm: "50px", md: "50px", lg: "50px" },
+          // width: { xs: "10px", sm: "10px" },
           fontFamily: "Nau Sea",
           letterSpacing: "2px",
           transform: "skewX(-10deg)",
@@ -123,22 +128,47 @@ const HorizontalBar = ({ data }) => {
           scrollBehavior: "smooth",
         }}
       >
-        {BodyPartImage.map((item) => (
-          <Box
-            key={item.id || item}
-            itemId={item.id || item}
-            title={item.id || item}
-            m="0 40px"
-          >
-            <CategoryCard item={item.text} img={item.img}></CategoryCard>
-          </Box>
-        ))}
+        {from === "search"
+          ? BodyPartImage.map((item, index) => (
+              <Box
+                key={index}
+                itemID={item.id || item}
+                title={item.id || item}
+                sx={{
+                  m: {
+                    xs: "0px 20px",
+                    sm: "0px 40px",
+                    md: "0px 40px",
+                    lg: "0px 40px",
+                  },
+                }}
+              >
+                <CategoryCard item={item.text} img={item.img}></CategoryCard>
+              </Box>
+            ))
+          : data.slice(0, 20).map((excercise, index) => (
+              <Box
+                key={index}
+                sx={{
+                  m: {
+                    xs: "0px 20px",
+                    sm: "0px 40px",
+                    md: "0px 40px",
+                    lg: "0px 40px",
+                  },
+                  background: "white",
+                }}
+              >
+                <ExcerciseCard excercise={excercise}></ExcerciseCard>
+              </Box>
+            ))}
       </Box>
       <Button
         sx={{
+          display: { xs: "none", sm: "none", md: "block", lg: "block" },
           color: "Black",
           backgroundColor: "white",
-          height: "50px",
+          height: { xs: "30px", sm: "50px", md: "50px", lg: "50px" },
           fontFamily: "Nau Sea",
           letterSpacing: "2px",
           transform: "skewX(-10deg)",

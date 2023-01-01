@@ -22,10 +22,16 @@ const ExcerciseCard = ({ excercise }) => {
           flexDirection: "column",
           border: "1px dashed black",
           gap: "1rem",
+          background: "white",
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <img src={excercise.gifUrl} alt={excercise.name} loading="lazy" />
+          <img
+            src={excercise.gifUrl}
+            alt={excercise.name}
+            className="excercise-img"
+            loading="lazy"
+          />
         </Box>
 
         <Stack
@@ -40,14 +46,20 @@ const ExcerciseCard = ({ excercise }) => {
               border: "1px dashed black",
               transform: "skewX(-10deg)",
               p: "0.2rem 1rem",
-              wordBreak: "break-word",
+              wordbreak: "break-word",
               color: "black",
               textAlign: "justify",
             }}
             justifyContent="center"
             alignItems="center"
           >
-            <Typography sx={{ fontFamily: "Nau Sea", letterSpacing: "2px" }}>
+            <Typography
+              sx={{
+                fontFamily: "Nau Sea",
+                letterSpacing: "2px",
+                fontWeight: "400",
+              }}
+            >
               {excercise.bodyPart}
             </Typography>
           </Box>
@@ -58,14 +70,21 @@ const ExcerciseCard = ({ excercise }) => {
               border: "1px dashed black",
               transform: "skewX(-10deg)",
               p: "0.2rem 1rem",
-              wordBreak: "break-word",
+              wordbreak: "break-word",
               color: "black",
               textAlign: "justify",
             }}
             justifyContent="center"
             alignItems="center"
           >
-            <Typography sx={{ fontFamily: "Nau Sea", letterSpacing: "2px" }}>
+            <Typography
+              sx={{
+                fontFamily: "Nau Sea",
+                letterSpacing: "2px",
+                // fontSize: "95%",
+                fontWeight: "400",
+              }}
+            >
               {excercise.target}
             </Typography>
           </Box>
@@ -84,7 +103,7 @@ const ExcerciseCard = ({ excercise }) => {
             textDecoration="none "
             // position="absolute"
 
-            wordBreak="break-word"
+            wordbreak="break-word"
           >
             {str}
           </Typography>

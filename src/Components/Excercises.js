@@ -48,41 +48,55 @@ const Excercises = () => {
 
   const paginate = (event, value) => {
     setCurrentPage(value);
+    var scroll_id = document.getElementById("exercises");
+    scroll_id.scrollIntoView({ behavior: "smooth" });
 
-    window.scrollTo({ top: 1800, behavior: "smooth" });
+    // window.scrollTo({ top: 1750, behavior: "smooth" });
   };
 
   if (!currentExercises.length) return <Loader />;
 
   return (
-    <Box id="exercises" sx={{ mt: { lg: "100px" } }} mt="50px" p="20px">
+    <Box
+      id="exercises"
+      sx={{ mt: { xs: "100px", lg: "100px" } }}
+      mt="50px"
+      p="20px"
+    >
       <Typography
         variant="h1"
-        mb="46px"
+        // mb="46px"
         color="white"
         textAlign="center"
         fontFamily="My Puma Oblique Outlined"
         textTransform="capitalize"
-        sx={{ opacity: "0.9" }}
+        sx={{
+          opacity: "0.9",
+          fontSize: { xs: "3rem", sm: "6rem", md: "6rem", lg: "6rem" },
+        }}
       >
         {selectedCategory}
       </Typography>
       <Typography
         variant="h1"
-        position="absolute"
+        // position="absolute"
         color="white"
         textAlign="center"
         fontFamily="My Puma Oblique Outlined"
-        top="1800px"
-        left="500px"
-        sx={{ opacity: "0.1" }}
+        sx={{
+          opacity: "0.2",
+          fontSize: { xs: "3rem", sm: "6rem", md: "6rem", lg: "6rem" },
+        }}
       >
         Excercises
       </Typography>
 
       <Stack
         direction="row"
-        sx={{ gap: { lg: "107px", xs: "50px" }, mt: { lg: "150px" } }}
+        sx={{
+          gap: { lg: "107px", xs: "50px" },
+          mt: { xs: "100px", md: "100px", sm: "100px", lg: "150px" },
+        }}
         flexWrap="wrap"
         justifyContent="center"
       >
@@ -98,15 +112,21 @@ const Excercises = () => {
             count={Math.ceil(excercises.length / excercisesPerPage)}
             page={currentPage}
             onChange={paginate}
-            size="large"
+            size="medium"
             sx={{
-              button: { color: "black", backgroundColor: "white" },
-              "button:hover": { color: "white", backgroundColor: "grey" },
-              "button:focus": { color: "white", backgroundColor: "grey" },
+              button: { color: "white", backgroundColor: "#1e1e1e" },
+              "button:hover": { color: "white", backgroundColor: "#111111" },
+
               "& .MuiPaginationItem-root": {
+                color: "white",
                 "&.Mui-selected": {
-                  background: "grey",
-                  color: "white",
+                  backgroundColor: "white",
+                  color: "black",
+                  // borderRadius: '50%',
+                },
+                "&.Mui-selected:hover": {
+                  backgroundColor: "white",
+                  color: "black",
                   // borderRadius: '50%',
                 },
               },

@@ -10,7 +10,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <Box width="400px" sx={{ width: { xl: "1448px" } }} m="auto">
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Navbar />
 
       <Routes>

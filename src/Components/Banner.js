@@ -2,20 +2,38 @@ import React from "react";
 import { Box, Stack, Typography, Button } from "@mui/material";
 
 import Bimage from "../assets/images/gym.jpg";
+import Bimage2 from "../assets/images/gym2.jpg";
 
 const Banner = () => {
   return (
-    <Box sx={{ overflow: "hidden" }}>
-      <img src={Bimage} className="hero-banner-img"></img>
+    <Box
+      sx={{ overflow: "hidden", pb: { sm: "30px", lg: "30px", md: "30px" } }}
+    >
+      <Box
+        sx={{ display: { xs: "none", sm: "block", md: "block", lg: "block" } }}
+      >
+        <img src={Bimage} className="hero-banner-img"></img>
+      </Box>
+
+      <Box
+        sx={{ display: { xs: "block", sm: "none", md: "none", lg: "none" } }}
+      >
+        <img src={Bimage2} className="mobile-banner"></img>
+      </Box>
       <Box
         sx={{
-          mt: { lg: "170px", xs: "70px" },
+          mt: { lg: "170px", xs: "400px", sm: "170px", md: "170px" },
           ml: { sm: "50px" },
         }}
         position="relative"
         p="20px"
       >
-        <Typography color="white" fontSize="80px" fontFamily="Poppins">
+        <Typography
+          fontWeight="1000"
+          color="white"
+          sx={{ fontSize: { lg: "60px", xs: "35px" } }}
+          fontFamily="Poppins"
+        >
           GET READY TO
         </Typography>
 
@@ -23,8 +41,8 @@ const Banner = () => {
           fontWeight="1000"
           sx={{ fontSize: { lg: "100px", xs: "50px" } }}
           color="white"
-          ml={5}
-          mb={5}
+          // ml={5}
+          mb={2}
           fontFamily="Poppins"
         >
           BURN
@@ -59,6 +77,22 @@ const Banner = () => {
         >
           Sweat
         </Typography>
+
+        <Typography
+          color="#FFFAFA	"
+          fontFamily="My Puma Oblique Outlined"
+          sx={{
+            opacity: 0.05,
+            display: { lg: "block", xs: "none" },
+          }}
+          fontSize="150px"
+          position="absolute"
+          top="200px"
+          right="-230px"
+        >
+          Excercise
+        </Typography>
+
         {/* <Typography
           fontSize="22px"
           lineHeight="35px"
@@ -79,14 +113,14 @@ const Banner = () => {
             fontFamily: "Nau Sea",
             letterSpacing: "1px",
             color: "black",
-            fontSize: "30px",
-            opacity: 0.5,
+            fontSize: { xs: "15px", md: "25px", lg: "25px", sm: "25px" },
+
             transform: "skewX(-10deg)",
             "&:hover": {
               opacity: 1,
               backgroundColor: "white",
             },
-            marginLeft: 1,
+            // marginLeft: 1,
           }}
         >
           <Box pt="2px" pl="5px" pr="5px" sx={{ border: "1px dashed black" }}>
@@ -94,21 +128,6 @@ const Banner = () => {
             Explore Excercises{" "}
           </Box>
         </Button>
-
-        <Typography
-          color="#FFFAFA	"
-          fontFamily="My Puma Oblique Outlined"
-          sx={{
-            opacity: 0.05,
-            display: { lg: "block", xs: "none" },
-          }}
-          fontSize="150px"
-          position="absolute"
-          top="200px"
-          left="950px"
-        >
-          Excercise
-        </Typography>
       </Box>
     </Box>
   );

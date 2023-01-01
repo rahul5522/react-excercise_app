@@ -5,7 +5,7 @@ export const giveData = async (url) => {
     options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "10dfffb44dmsh368c671d3c8289cp1eb2d6jsn36c3851c37d6",
+        "X-RapidAPI-Key": "a2da85f153mshaccc1dd70a3901dp1e5e72jsne181faa35b5e",
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
       },
     };
@@ -14,7 +14,7 @@ export const giveData = async (url) => {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": "a2da85f153mshaccc1dd70a3901dp1e5e72jsne181faa35b5e",
-        "X-RapidAPI-Host": "youtube-search-and-download.p.rapidapi.com",
+        "X-RapidAPI-Host": "simple-youtube-search.p.rapidapi.com",
       },
     };
   }

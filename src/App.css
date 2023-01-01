@@ -2,6 +2,15 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "My Puma Oblique Outlined";
+  src: url(./assets/fonts/MyPumaObliqueOutlined.ttf);
+}
+
+@font-face {
+  font-family: "Nau Sea";
+  src: url(./assets/fonts/NauSea.otf);
+}
 body {
   font-family: "Josefin Sans";
   /* background-color: #28282b; */
@@ -16,6 +25,10 @@ body {
 
 ::-webkit-scrollbar {
   width: 0px;
+}
+.logo {
+  width: 60px;
+  height: 60px;
 }
 
 .right-arrow,
@@ -53,8 +66,8 @@ body {
 }
 
 .detail-image {
-  width: 500px;
-  height: 500px;
+  /* width: 500px;
+  height: 500px; */
 }
 
 .hero-banner-img {
@@ -66,7 +79,7 @@ body {
 }
 
 .exercise-card {
-  background: white;
+  background-color: white;
 
   text-decoration: none;
   margin-bottom: "5px";
@@ -75,8 +88,9 @@ body {
   transition: 0.3s all ease-in-out;
 }
 
-.exercise-card img {
-  height: 326px;
+.excercise-img {
+  width: 300px;
+  height: 300px;
 }
 
 .bodyPart-card {
@@ -94,7 +108,7 @@ body {
 }
 
 .exercise-card:hover {
-  transform: scale(1.1, 1.1);
+  /* transform: scale(0.95, 0.95); */
 }
 
 .bodyPart-card:hover img {
@@ -103,9 +117,9 @@ body {
 .exercise-video {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  /* gap: 24px; */
   width: 387px;
-  height: 381px;
+  /* height: 381px; */
   text-decoration: none;
 }
 
@@ -113,28 +127,51 @@ body {
   outline: none;
 }
 
+.mobile-banner {
+  z-index: -10;
+  position: absolute;
+  right: 0px;
+  top: 80px;
+  width: 100%;
+}
+.video_responsive {
+  min-width: 400px;
+  height: 220px;
+}
+
 @media screen and (max-width: 1200px) {
   .left-arrow,
   .right-arrow {
-    position: static !important;
+    /* position: static !important; */
   }
 
-  .hero-banner-img {
+  /* .hero-banner-img {
     display: none;
-  }
+  } */
 
   .exercise-card {
-    width: 320px;
+    /* width: 320px; */
   }
 
   .exercise-video {
     width: 320px;
-    height: 300px;
+    /* height: 300px; */
   }
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
   .exercise-card {
     width: 280px;
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .video_responsive {
+    min-width: 55vw;
+    height: 220px;
   }
 }

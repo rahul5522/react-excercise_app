@@ -14,15 +14,23 @@ const Navbar = () => {
         mt: { sm: "32px", xs: "20px" },
         justifyContent: "space-between",
       }}
-      px="20px"
+      // px="20px"
       position="relative"
       alignItems="center"
     >
       <Link to="/">
-        <img
-          src={Logo}
-          style={{ width: "60px", height: "60px", margin: "0px 70px" }}
-        />
+        <Stack
+          sx={{
+            margin: {
+              xs: "0px 20px",
+              sm: "0px 20px",
+              md: "0px 70px",
+              lg: "0px 70px",
+            },
+          }}
+        >
+          <img src={Logo} className="logo" />
+        </Stack>
       </Link>
       <Stack
         direction="row"
@@ -34,6 +42,12 @@ const Navbar = () => {
         margin="0px 70px"
         sx={{
           display: { sm: "flex", xs: "none", md: "flex", lg: "flex" },
+          margin: {
+            xs: "0px 20px",
+            sm: "0px 20px",
+            md: "0px 70px",
+            lg: "0px 70px",
+          },
         }}
       >
         <Link
